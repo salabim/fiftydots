@@ -1,5 +1,7 @@
 import collections
 
+__version__ = "0.0.1"
+
 spec = """
 \x20
 .....
@@ -2342,14 +2344,15 @@ def _check():
         if i != 9:
             print(f"error in {s} number of lines is {i+1}")
             
-def grid_to_str(grid, leftborder='<', rightborder='>'):
-    result = ''
-    for l in grid:
-        result += leftborder + ("".join("*" if vl else " " for vl in l)) + rightborder + '\n'
-    return result
+
 
 
 if __name__ == "__main__":
+    def grid_to_str(grid, leftborder='<', rightborder='>'):
+        result = ''
+        for l in grid:
+            result += leftborder + ("".join("*" if vl else " " for vl in l)) + rightborder + '\n'
+        return result    
     _check()
     
     print(grid_to_str(grid("abc defghi!A", intra=1, proportional=False, width=None, align='c')))
